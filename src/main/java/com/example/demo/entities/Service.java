@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name="projects")
 public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -9,6 +9,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name="chats")
 public class Chat {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

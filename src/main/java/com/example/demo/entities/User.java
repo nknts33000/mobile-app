@@ -11,6 +11,7 @@ import java.util.TreeSet;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name="users")
 public class User {
 
     @Id

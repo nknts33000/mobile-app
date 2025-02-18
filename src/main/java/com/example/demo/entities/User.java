@@ -2,6 +2,7 @@ package com.example.demo.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
@@ -10,6 +11,7 @@ import java.util.TreeSet;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
 @Entity
 @Table(name="users")
 public class User {
@@ -44,4 +46,10 @@ public class User {
 
     @OneToMany(fetch = FetchType.EAGER)
     private List<Chat> chats;
+
+
+    public User(long id, String username) {
+        this.userId = id;
+        this.username = username;
+    }
 }

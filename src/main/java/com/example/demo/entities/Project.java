@@ -9,7 +9,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="users")
+@Table(name="projects")
 public class Project {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)

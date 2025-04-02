@@ -10,10 +10,7 @@ import org.mapstruct.factory.Mappers;
 public interface CustomMapper {
     CustomMapper INSTANCE = Mappers.getMapper(CustomMapper.class);
 
-    // Custom mapping for role (Enum -> String)
-    @Mapping(target = "UserDTO", source = "User")
     UserDTO toDto(User user);
 
-    @Mapping(target = "User", source = "UserDTO")
     User toUser(UserDTO userDTO);
 }

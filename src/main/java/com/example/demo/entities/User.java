@@ -1,17 +1,19 @@
 package com.example.demo.entities;
 
+import com.example.demo.Utils.Role;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import net.minidev.json.annotate.JsonIgnore;
 
 import java.util.Date;
 import java.util.List;
 import java.util.TreeSet;
 
-@NoArgsConstructor
+//@NoArgsConstructor
+@RequiredArgsConstructor
 @AllArgsConstructor
-@Getter
+//@Getter
+//@Setter
 @Entity
 @Table(name="users")
 public class User {
@@ -20,13 +22,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long userId;
     private String username;
+    @JsonIgnore
     private String password;
     private String name;
     private String surname;
     private String email;
     private boolean active;
     private Date dateOfBirth;
-    private enum Role{ADMIN,TECHNICIAN,CUSTOMER};
     private Role role;
 
     @OneToMany(mappedBy="customer")
@@ -48,8 +50,15 @@ public class User {
     private List<Chat> chats;
 
 
-    public User(long id, String username) {
-        this.userId = id;
-        this.username = username;
-    }
+//    public User(String username, String password, String name,
+//                String surname, String email, Date dateOfBirth, Role role) {
+//        this.username = username;
+//        this.password=password;
+//        this.name=name;
+//        this.surname=surname;
+//        this.email=email;
+//        this.active=false;
+//        this.dateOfBirth=dateOfBirth;
+//        this.role= role;
+//    }
 }

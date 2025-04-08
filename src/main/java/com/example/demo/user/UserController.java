@@ -25,9 +25,9 @@ public class UserController {
         return userService.getUsers();
     }
 
-    @PostMapping("/register")
-    public ResponseEntity<UserDTO> register(@RequestBody UserDTO requestBody){
-        UserDTO userDTO= userService.register(requestBody);
-        return new ResponseEntity<>(userDTO,HttpStatus.CREATED);
-    }
+//    @PostMapping("/register")
+//    public ResponseEntity<UserDTO> register(@RequestBody UserDTO requestBody){
+//        UserDTO userDTO= userService.register(requestBody);
+//        return new ResponseEntity<>(userDTO,HttpStatus.CREATED);
+//    }
 }

@@ -9,11 +9,15 @@ import java.util.List;
 
 @Service
 public class UserService {
-    private final CustomMapper customMapper;
+    //private final CustomMapper customMapper;
     private final UserRepo userRepo;
 
-    public UserService(CustomMapper customMapper, UserRepo userRepo) {
-        this.customMapper = customMapper;
+//    public UserService(CustomMapper customMapper, UserRepo userRepo) {
+//        //this.customMapper = customMapper;
+//        this.userRepo = userRepo;
+//    }
+
+    public UserService(UserRepo userRepo) {
         this.userRepo = userRepo;
     }
 
@@ -23,8 +27,8 @@ public class UserService {
         );
     }
 
-    public UserDTO register(UserDTO userDTO) {
-        User user=customMapper.INSTANCE.toUser(userDTO);
-        return customMapper.INSTANCE.toDto(userRepo.save(user));
-    }
+//    public UserDTO register(UserDTO userDTO) {
+//        User user=customMapper.INSTANCE.toUser(userDTO);
+//        return customMapper.INSTANCE.toDto(userRepo.save(user));
+//    }
 }

@@ -2,12 +2,17 @@ package com.example.demo.user;
 
 import com.example.demo.Utils.Role;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import jakarta.validation.Valid;
+import net.minidev.json.annotate.JsonIgnore;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 @Getter
@@ -18,16 +23,14 @@ public class UserDTO {
 
     private long userId;
 
-    @NotNull
+    @NotBlank
     private String username;
-    private String password;
+
+    @NotBlank
     private String name;
+    @NotBlank
     private String surname;
     @Email
-    @NotNull
+    @NotBlank
     private String email;
-    @Valid
-    @NotNull
-    private Role role;
-    private Date dateOfBirth;
 }

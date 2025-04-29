@@ -1,16 +1,30 @@
 package com.example.demo.mapper;
 
 import com.example.demo.entities.User;
+import com.example.demo.user.RegistrationAndUpdateDTO;
 import com.example.demo.user.UserDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface CustomMapper {
-    CustomMapper INSTANCE = Mappers.getMapper(CustomMapper.class);
-
     UserDTO toDto(User user);
 
-    User toUser(UserDTO userDTO);
+    @Mapping(target = "orders", ignore = true)
+    @Mapping(target = "projects", ignore = true)
+    @Mapping(target = "services", ignore = true)
+    @Mapping(target = "sentMessages", ignore = true)
+    @Mapping(target = "receivedMessages", ignore = true)
+    @Mapping(target = "chats", ignore = true)
+    @Mapping(target = "active", ignore = true)
+    User toUserFromUserDto(UserDTO userDTO);
+
+    @Mapping(target = "orders", ignore = true)
+    @Mapping(target = "projects", ignore = true)
+    @Mapping(target = "services", ignore = true)
+    @Mapping(target = "sentMessages", ignore = true)
+    @Mapping(target = "receivedMessages", ignore = true)
+    @Mapping(target = "chats", ignore = true)
+    @Mapping(target = "active", ignore = true)
+    User toUserFromRegDto(RegistrationAndUpdateDTO registrationDTO);
 }
